@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Studio Manager</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Game Studio Manager</h1>
+    <p>Administración y mejora de videojuegos</p>
+  </header>
+
+  <nav>
+    <button onclick="mostrar('publicacion')">Publicación</button>
+    <button onclick="mostrar('mantenimiento')">Mantenimiento</button>
+    <button onclick="mostrar('feedback')">Feedback</button>
+    <button onclick="mostrar('estadisticas')">Mejora continua</button>
+  </nav>
+
+  <main>
+    <!-- MODULO 1: PUBLICACION -->
+    <section id="publicacion" class="seccion activa">
+      <h2>Preparación para publicación</h2>
+
+      <label>Nombre del videojuego:</label>
+      <input type="text" id="nombre" placeholder="Ej. Aventura Espacial">
+
+      <label>Versión:</label>
+      <input type="text" id="version" placeholder="Ej. 1.0.0">
+
+      <label>Plataforma:</label>
+      <select id="plataforma">
+        <option value="Android">Android</option>
+        <option value="iOS">iOS</option>
+        <option value="PC">PC</option>
+        <option value="Web">Web</option>
+      </select>
+
+      <label>Descripción:</label>
+      <textarea id="descripcion" placeholder="Describe tu videojuego"></textarea>
+
+      <label>Optimización de recursos:</label>
+      <select id="optimizacion">
+        <option value="Pendiente">Pendiente</option>
+        <option value="Completada">Completada</option>
+      </select>
+
+      <label>Certificado o firma:</label>
+      <select id="firma">
+        <option value="Pendiente">Pendiente</option>
+        <option value="Verificada">Verificada</option>
+      </select>
+
+      <button class="accion" onclick="publicar()">Simular publicación</button>
+
+      <div id="resultadoPublicacion" class="mensaje"></div>
+      <div id="datosJuego"></div>
+    </section>
+
+    <!-- MODULO 2: MANTENIMIENTO -->
+    <section id="mantenimiento" class="seccion">
+      <h2>Mantenimiento y actualización</h2>
+
+      <label>Tipo de actualización:</label>
+      <select id="tipoActualizacion">
+        <option value="Corrección de errores">Corrección de errores</option>
+        <option value="Nueva funcionalidad">Nueva funcionalidad</option>
+        <option value="Compatibilidad">Compatibilidad</option>
+      </select>
+
+      <label>Descripción del cambio:</label>
+      <textarea id="detalleActualizacion" placeholder="Describe el error o mejora"></textarea>
+
+      <label>Nueva versión:</label>
+      <input type="text" id="nuevaVersion" placeholder="Ej. 1.1.0">
+
+      <button class="accion" onclick="registrarActualizacion()">Registrar actualización</button>
+
+      <h3>Historial de actualizaciones</h3>
+      <div id="listaActualizaciones"></div>
+    </section>
+
+    <!-- MODULO 3: FEEDBACK -->
+    <section id="feedback" class="seccion">
+      <h2>Feedback de los usuarios</h2>
+
+      <label>Nombre del usuario:</label>
+      <input type="text" id="usuario" placeholder="Nombre">
+
+      <label>Calificación:</label>
+      <select id="calificacion">
+        <option value="5">5 - Excelente</option>
+        <option value="4">4 - Muy bueno</option>
+        <option value="3">3 - Bueno</option>
+        <option value="2">2 - Regular</option>
+        <option value="1">1 - Malo</option>
+      </select>
+
+      <label>Comentario:</label>
+      <textarea id="comentario" placeholder="¿Qué opinas del videojuego?"></textarea>
+
+      <button class="accion" onclick="registrarFeedback()">Enviar opinión</button>
+
+      <h3>Opiniones recibidas</h3>
+      <div id="listaFeedback"></div>
+    </section>
+
+    <!-- MODULO 4: MEJORA CONTINUA -->
+    <section id="estadisticas" class="seccion">
+      <h2>Mejora continua y análisis</h2>
+
+      <div class="tarjetas">
+        <div class="tarjeta">
+          Videojuegos publicados
+          <strong id="totalJuegos">0</strong>
+        </div>
+
+        <div class="tarjeta">
+          Actualizaciones
+          <strong id="totalActualizaciones">0</strong>
+        </div>
+
+        <div class="tarjeta">
+          Opiniones recibidas
+          <strong id="totalOpiniones">0</strong>
+        </div>
+
+        <div class="tarjeta">
+          Promedio de calificación
+          <strong id="promedio">0</strong>
+        </div>
+      </div>
+
+      <h3>Propuestas de mejora</h3>
+      <div id="propuestas"></div>
+
+      <button class="accion" onclick="actualizarEstadisticas()">Actualizar estadísticas</button>
+    </section>
+  </main>
+
+  <footer>
+    Proyecto educativo de desarrollo web
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
